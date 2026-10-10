@@ -1,0 +1,10 @@
+# Phase 3: DDPG vs TD3 value estimation. 2 algos x 2 envs x 5 seeds = 20 runs.
+# Same envs and step budget as the PPO lambda sweep, so value-estimation bias can be compared.
+name: offpolicy_sweep
+trainer: ddpg
+base:
+  total_steps: 1000000
+grid:
+  env_id: [Hopper-v5, LunarLanderContinuous-v3]
+  algo: [ddpg, td3]
+  seed: [0, 1, 2, 3, 4]

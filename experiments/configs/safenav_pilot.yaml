@@ -1,0 +1,13 @@
+# Phase 5 pilot: is the task learnable in budget, and is it fast enough? (not used for results)
+name: safenav_pilot
+base:
+  env_id: SafeNav-v0
+  total_steps: 500000
+  checkpoint_every: 1000000000
+grid:
+  env_kwargs:
+    - {reward_mode: task, coef: 0.0}
+    - {reward_mode: sparse, coef: 10.0}
+    - {reward_mode: distance, coef: 1.0}
+    - {reward_mode: cbf, coef: 1.0}
+  seed: [0]

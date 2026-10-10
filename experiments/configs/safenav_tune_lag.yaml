@@ -1,0 +1,12 @@
+# Phase 5 tuning for PPO-Lagrangian (multiplier learning rate), collision budget 5%.
+name: safenav_tune_lag
+base:
+  env_id: SafeNav-v0
+  total_steps: 500000
+  checkpoint_every: 1000000000
+  lagrangian: true
+  cost_limit: 0.05
+  env_kwargs: {reward_mode: task, coef: 0.0}
+grid:
+  lam_lr: [0.3, 1.0, 3.0, 10.0]
+  seed: [100, 101, 102]

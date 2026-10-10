@@ -1,0 +1,11 @@
+# Phase 2.3: GAE lambda under noisy rewards. 3 noise levels x 4 lambdas x 5 seeds = 60 runs.
+# sigma = 0 is reused from lambda_sweep (identical config otherwise).
+# LunarLander per-step reward std is ~2.5, so sigma = 1 / 3 / 10 is ~0.4x / 1.2x / 4x of it.
+name: noise_sweep
+base:
+  total_steps: 1000000
+  env_id: LunarLanderContinuous-v3
+grid:
+  reward_noise: [1.0, 3.0, 10.0]
+  gae_lambda: [0.5, 0.9, 0.95, 1.0]
+  seed: [0, 1, 2, 3, 4]

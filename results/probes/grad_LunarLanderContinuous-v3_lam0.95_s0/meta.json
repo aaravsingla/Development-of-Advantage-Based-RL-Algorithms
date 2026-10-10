@@ -1,0 +1,35 @@
+{
+  "run_dir": "results/runs/lambda_sweep/LunarLanderContinuous-v3_lam0.95_s0",
+  "env_id": "LunarLanderContinuous-v3",
+  "seed": 0,
+  "lam_trained": 0.95,
+  "args": {
+    "run_dir": "results/runs/lambda_sweep/LunarLanderContinuous-v3_lam0.95_s0",
+    "fractions": [
+      0.1,
+      0.4,
+      1.0
+    ],
+    "batches": 100,
+    "episodes_per_batch": 8,
+    "sigmas": [
+      0.0,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "lambdas": [
+      0.0,
+      0.5,
+      0.8,
+      0.9,
+      0.95,
+      0.97,
+      0.99,
+      1.0
+    ],
+    "boot": 500,
+    "seed": 0,
+    "out": null
+  }
+}

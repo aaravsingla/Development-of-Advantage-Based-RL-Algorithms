@@ -1,0 +1,11 @@
+# Phase 3 ablation: DDPG + clipped double-Q only (no target smoothing, no policy delay).
+# Isolates how much of TD3's overestimation fix comes from the twin critics alone.
+name: twinq_ablation
+trainer: ddpg
+base:
+  total_steps: 1000000
+  algo: ddpg
+  twin_q: true
+grid:
+  env_id: [Hopper-v5, LunarLanderContinuous-v3]
+  seed: [0, 1, 2, 3, 4]

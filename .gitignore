@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+results/runs/
+results/probes/*.log
+results/*.log
+INTERVIEW_PREP.md
+.DS_Store

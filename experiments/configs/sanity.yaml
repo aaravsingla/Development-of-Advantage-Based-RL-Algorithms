@@ -1,0 +1,9 @@
+# Phase 1 sanity check: does from-scratch PPO reach reference returns?
+# Reference (CleanRL ppo_continuous_action, 1M steps): Hopper ~2000-2500, LunarLanderContinuous ~100-250.
+name: sanity
+base:
+  total_steps: 1000000
+  gae_lambda: 0.95
+grid:
+  env_id: [Hopper-v5, LunarLanderContinuous-v3]
+  seed: [0, 1]

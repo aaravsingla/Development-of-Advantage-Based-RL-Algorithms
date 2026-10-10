@@ -1,0 +1,8 @@
+# Phase 2.1: GAE lambda ablation. 2 envs x 8 lambdas x 5 seeds = 80 runs.
+name: lambda_sweep
+base:
+  total_steps: 1000000
+grid:
+  env_id: [Hopper-v5, LunarLanderContinuous-v3]
+  gae_lambda: [0.0, 0.5, 0.8, 0.9, 0.95, 0.97, 0.99, 1.0]
+  seed: [0, 1, 2, 3, 4]

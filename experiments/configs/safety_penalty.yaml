@@ -1,0 +1,11 @@
+# Phase 4B: "Safe Reward Balancing". Hopper with the Safety-Gymnasium velocity constraint
+# (cost = 1 when forward speed > 0.7402 m/s), trained on r - w*c with the standard
+# (normalised) PPO setup. 4 weights x 5 seeds = 20 runs.
+name: safety_penalty
+base:
+  env_id: Hopper-v5
+  total_steps: 1000000
+  cost_type: velocity
+grid:
+  cost_weight: [0.0, 0.5, 2.0, 10.0]
+  seed: [0, 1, 2, 3, 4]

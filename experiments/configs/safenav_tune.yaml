@@ -1,0 +1,21 @@
+# Phase 5 tuning: equal budget per method (4 coefficients x 3 tuning seeds, disjoint from final seeds 0-9).
+name: safenav_tune
+base:
+  env_id: SafeNav-v0
+  total_steps: 500000
+  checkpoint_every: 1000000000
+grid:
+  env_kwargs:
+    - {reward_mode: sparse, coef: 3.0}
+    - {reward_mode: sparse, coef: 10.0}
+    - {reward_mode: sparse, coef: 30.0}
+    - {reward_mode: sparse, coef: 100.0}
+    - {reward_mode: distance, coef: 0.3}
+    - {reward_mode: distance, coef: 1.0}
+    - {reward_mode: distance, coef: 3.0}
+    - {reward_mode: distance, coef: 10.0}
+    - {reward_mode: cbf, coef: 0.3}
+    - {reward_mode: cbf, coef: 1.0}
+    - {reward_mode: cbf, coef: 3.0}
+    - {reward_mode: cbf, coef: 10.0}
+  seed: [100, 101, 102]
